@@ -6,10 +6,11 @@ import { Spinner } from 'react-bootstrap'
 
 
 export default ({ setSelectedRowData}) => {
+    const storedPageNo = localStorage.getItem('pageNo')
     const [loading, setLoading] = useState(false)
     const [list, setList] = useState([])
     const [hasMore, setHasMore] = useState(true)
-    const [pageNo, setPageNo] = useState(1)
+    const [pageNo, setPageNo] = useState(Number(storedPageNo))
 
     useEffect(() => {
         async function fetchData() {
@@ -24,19 +25,21 @@ export default ({ setSelectedRowData}) => {
           setLoading(false)
         }
         fetchData()
+        localStorage.setItem('pageNo', String(pageNo))
       }, [pageNo])
 
     function incremenetPage() {
-        setPageNo(pageNo + 1)
+        const storedPageNo = localStorage.getItem('pageNo')
+        setPageNo(Number(storedPageNo) + 1)
     }
 
     function decrementPage() {
-        pageNo > 1 && setPageNo(pageNo - 1)
+        const storedPageNo = localStorage.getItem('pageNo')
+        pageNo > 1 && setPageNo(Number(storedPageNo) - 1)
         return
     }
 
     function handleTableRowOnCLick(data) {
-        console.log(data)
         setSelectedRowData(data)
     }
 
