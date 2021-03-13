@@ -23,9 +23,32 @@ code {
 .table-pages-navigation {
   position: absolute;
   bottom: -2rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.table-pages-navigation p{
+  float: left;
 }
 
 .table-spinner {
-  position: absolute;
-  top: 50%
+  position: fixed;
+  top: 40%
+}
+
+.details-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: '#794f4f'
+}
+
+.list-tip {
+  font-size: 12px;
+  opacity: 0.6;
+}
+
+.table-header {
+  text-transform: capitalize;
+  letter-spacing: 1px;
 }

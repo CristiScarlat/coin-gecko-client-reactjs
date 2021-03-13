@@ -14,10 +14,15 @@ function buildParams(obj) {
 }
 
 //https://api.coingecko.com/api/v3/coins/markets?vs_currency=eur&order=market_cap_desc&per_page=100&page=1&sparkline=false
-async function getConinsMarket(paramsObj){
+async function getCoinsMarket(paramsObj){
     const params = buildParams(paramsObj)
     console.log(params)
     return await instance.get(`/coins/markets?${params}`)
 }
 
-export { getConinsMarket }
+//https://api.coingecko.com/api/v3/coins/bitcoin
+async function getCoinDetails(id){
+    return await instance.get(`/coins/${id}`)
+}
+
+export { getCoinsMarket, getCoinDetails }
