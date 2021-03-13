@@ -17,7 +17,6 @@ export default ({ setSelectedRowData}) => {
           setLoading(true)
           const res = await getCoinsMarket({ vs_currency: 'eur', order: 'market_cap_desc', per_page: 10, page: pageNo })
           if (res.data[0] === list[0]) {
-            console.log("not any more")
             setHasMore(false)
             return
           }
@@ -29,12 +28,10 @@ export default ({ setSelectedRowData}) => {
       }, [pageNo])
 
     function incremenetPage() {
-        const storedPageNo = localStorage.getItem('pageNo')
         setPageNo(Number(storedPageNo) + 1)
     }
 
     function decrementPage() {
-        const storedPageNo = localStorage.getItem('pageNo')
         pageNo > 1 && setPageNo(Number(storedPageNo) - 1)
         return
     }

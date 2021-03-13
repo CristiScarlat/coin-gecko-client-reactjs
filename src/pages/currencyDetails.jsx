@@ -19,7 +19,6 @@ const CurrencyDetails = ({id}) => {
         }
         if(!id){
             const storedID = localStorage.getItem('coinId')
-            console.log(storedID)
             fetchData(storedID)
         } else {
             fetchData(id)
@@ -32,8 +31,6 @@ const CurrencyDetails = ({id}) => {
         const tData = {header, data}
         return tData
     }
-
-    console.log({ coinDetails })
 
     return (
         <>

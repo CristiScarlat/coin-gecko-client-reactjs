@@ -4,10 +4,8 @@ import { Link } from 'react-router-dom'
 
 
 const ResponsiveTable = ({tableData, onRowClick}) => {
-    console.log('>>>table>>>>', tableData)
     function renderTableRowContent(data) {
         return tableData.header.map(h => {
-            console.log(h, data[h])
             return <td key={h}> {h === 'image' ? <Link to={`/details/${data.id}`}><img src={data[h]} width={30}/></Link> : data[h]} </td>
         })
     }
