@@ -11,3 +11,21 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.App {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  align-items: center;
+  position: relative;
+}
+
+.table-pages-navigation {
+  position: absolute;
+  bottom: -2rem;
+}
+
+.table-spinner {
+  position: absolute;
+  top: 50%
+}
