@@ -38,7 +38,7 @@ const CurrencyDetails = ({id}) => {
         <img src={coinDetails.image.small} /><span className="details-title ml-2">{coinDetails.name}</span>
         <div className="mt-2 mb-4" dangerouslySetInnerHTML={{ __html: coinDetails.description.en }} />
         <ResponsiveTable tableData={getTableData()}/>
-        {coinDetails.links.homepage.map(hp => <a href={hp}>{hp}</a>)}
+        {coinDetails.links.homepage.map(hp => <a href={hp} className="mr-2">{hp}</a>)}
     </div> : null}
     {loading && <Spinner animation="border" className="table-spinner" variant="primary"/>}
     </>

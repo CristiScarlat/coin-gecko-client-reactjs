@@ -6,11 +6,11 @@ import { Spinner } from 'react-bootstrap'
 
 
 export default ({ setSelectedRowData}) => {
-    const storedPageNo = localStorage.getItem('pageNo')
+    const storedPageNo = localStorage.getItem('pageNo');
     const [loading, setLoading] = useState(false)
     const [list, setList] = useState([])
     const [hasMore, setHasMore] = useState(true)
-    const [pageNo, setPageNo] = useState(Number(storedPageNo))
+    const [pageNo, setPageNo] = useState((Number(storedPageNo) === 0) ? 1 : Number(storedPageNo))
 
     useEffect(() => {
         async function fetchData() {
