@@ -7,7 +7,7 @@ const CurrencyDetails = ({id}) => {
     const [coinDetails, setCoinDetails] = useState()
     const [loading, setLoading] = useState(false)
     if(id){
-        localStorage.setItem('coinId', id)
+        sessionStorage.setItem('coinId', id)
     }
 
     useEffect(() => {
@@ -18,7 +18,7 @@ const CurrencyDetails = ({id}) => {
             setLoading(false)
         }
         if(!id){
-            const storedID = localStorage.getItem('coinId')
+            const storedID = sessionStorage.getItem('coinId')
             fetchData(storedID)
         } else {
             fetchData(id)

@@ -17,8 +17,9 @@ function App() {
 
     <Router>
       <div className="App">
-        <Navbar className="w-100 mb-3" bg="dark" variant="dark">
+        <Navbar className="w-100 mb-3 justify-content-between" bg="dark" variant="dark">
           <Navbar.Brand>Gecko Client</Navbar.Brand>
+          <div style={{color: 'grey'}}>Powered by CoinGecko API</div>
         </Navbar>
         <Switch>
           <Route exact path='/'>

@@ -6,7 +6,7 @@ import { Spinner } from 'react-bootstrap'
 
 
 export default ({ setSelectedRowData}) => {
-    const storedPageNo = localStorage.getItem('pageNo');
+    const storedPageNo = sessionStorage.getItem('pageNo');
     const [loading, setLoading] = useState(false)
     const [list, setList] = useState([])
     const [hasMore, setHasMore] = useState(true)
@@ -24,7 +24,7 @@ export default ({ setSelectedRowData}) => {
           setLoading(false)
         }
         fetchData()
-        localStorage.setItem('pageNo', String(pageNo))
+        sessionStorage.setItem('pageNo', String(pageNo))
       }, [pageNo])
 
     function incremenetPage() {
